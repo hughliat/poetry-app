@@ -1,0 +1,39 @@
+/**
+ * CSS 变量定义 — 古典风格配色（水墨素雅）
+ * 按开发设计 7.4.1 节定义
+ */
+:root {
+  /* 主色调 */
+  --color-bg:            #f5f0e8;   /* 宣纸底色（主背景） */
+  --color-bg-card:       #faf7f0;   /* 卡片背景（略浅） */
+  --color-text:          #3a2e2e;   /* 正文文字（深褐） */
+  --color-text-light:    #7a6a6a;   /* 次要文字（浅褐） */
+  --color-primary:       #8b4513;   /* 主强调色（赭石/檀色） */
+  --color-primary-hover: #a0522d;   /* 主色悬停 */
+  --color-accent:        #2f4f4f;   /* 辅助强调色（墨绿） */
+  --color-border:        #d4c5a9;   /* 边框色（淡金） */
+  --color-highlight:     #fff3cd;   /* 搜索高亮背景 */
+  --color-error:         #8b0000;   /* 错误色（暗红） */
+
+  /* 字体 */
+  --font-serif:  "Noto Serif SC", "Source Han Serif SC", "STSong", serif;
+  --font-sans:   "Noto Sans SC", "Source Han Sans SC", "PingFang SC", sans-serif;
+
+  /* 间距 */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 40px;
+
+  /* 圆角 */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+
+  /* 阴影 */
+  --shadow-card: 0 2px 8px rgba(58, 46, 46, 0.08);
+
+  /* 布局 */
+  --max-width: 1200px;
+  --nav-height: 64px;
+}

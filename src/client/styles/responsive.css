@@ -1,0 +1,107 @@
+/**
+ * 响应式媒体查询
+ * 断点：桌面 >= 1024px | 平板 768~1023px | 手机 375~767px | 小屏手机 < 375px
+ */
+
+/* ===== 平板适配 (768px ~ 1023px) ===== */
+@media (max-width: 1023px) {
+  .container {
+    padding: 0 var(--spacing-md);
+  }
+
+  /* 浏览页：单栏布局，筛选面板折叠到顶部 */
+  .browse-layout {
+    flex-direction: column !important;
+  }
+
+  .browse-layout .filter-panel {
+    width: 100% !important;
+    border-right: none !important;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+  }
+
+  /* 诗词网格：单列 */
+  .poem-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .page-title {
+    font-size: 1.5rem;
+  }
+}
+
+/* ===== 手机基础适配 (< 768px) ===== */
+@media (max-width: 767px) {
+  /* 全局 */
+  :root {
+    --spacing-lg: 16px;
+    --spacing-xl: 24px;
+  }
+  body {
+    overflow-x: hidden;
+  }
+  .container {
+    padding: 0 var(--spacing-sm);
+    max-width: 100%;
+  }
+
+  .page-title {
+    font-size: 1.2rem;
+  }
+
+  /* 导航栏 — 汉堡菜单模式 */
+  .nav-bar {
+    padding: var(--spacing-sm) !important;
+    height: auto !important;
+  }
+  .nav-bar__links { display: none; }           /* 隐藏桌面导航链接 */
+  .nav-bar__search { display: none; }           /* 隐藏桌面搜索框 */
+  .nav-bar__hamburger { display: flex; }        /* 显示汉堡菜单按钮 */
+  .nav-bar__actions { display: flex; }          /* 显示右侧操作区 */
+
+  /* 诗词网格 — 单列 */
+  .poem-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-sm);
+  }
+
+  /* 筛选面板 — 折叠 */
+  .filter-panel__toggle { display: flex; }      /* 显示筛选展开按钮 */
+  .filter-panel__body { display: none; }        /* 默认折叠 */
+  .filter-panel__body.expanded { display: block; } /* 展开时显示 */
+
+  /* 分页器 — 紧凑 */
+  .pagination__item:nth-child(n+4):nth-last-child(n+4) { display: none; }
+
+  /* 详情页 */
+  .detail-content {
+    padding: var(--spacing-md) !important;
+  }
+  .detail-content .poem-content {
+    font-size: 1rem !important;
+  }
+  .detail-title { font-size: 1.3rem; }
+  .detail-content { line-height: 1.6; }
+
+  /* 收藏页 — 单列 */
+  .favorite-item { flex-direction: row; }
+
+  /* 搜索页 */
+  .search-input-wrap {
+    max-width: 100%;
+  }
+}
+
+/* ===== 小屏手机适配 (< 375px) ===== */
+@media (max-width: 374px) {
+  :root {
+    --spacing-md: 12px;
+    --spacing-lg: 12px;
+  }
+  .nav-bar__name { font-size: 1rem; }
+  .poem-card__title { font-size: 1rem; }
+  .detail-title { font-size: 1.1rem; }
+  .mobile-menu { width: 240px; }
+}

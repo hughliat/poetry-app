@@ -1,0 +1,19 @@
+{
+  "name": "poetry-app",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "install:all": "cd src/server && npm install && cd ../client && npm install",
+    "init-data": "node src/server/scripts/init-data.js",
+    "dev:server": "cd src/server && npm run dev",
+    "dev:client": "cd src/client && npm run dev",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "build": "cd src/client && npm run build",
+    "start": "cd src/server && npm start",
+    "test": "cd src/server && npm test",
+    "lint": "cd src/client && npm run lint && cd ../server && npm run lint"
+  },
+  "devDependencies": {
+    "concurrently": "^8.0.0"
+  }
+}

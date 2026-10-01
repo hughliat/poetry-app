@@ -1,0 +1,30 @@
+{
+  "env": {
+    "browser": true,
+    "es2022": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2022,
+    "sourceType": "module"
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:vue/vue3-essential"
+  ],
+  "rules": {
+    "no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }],
+    "no-console": "off",
+    "semi": ["error", "always"],
+    "no-var": "error",
+    "prefer-const": "warn",
+    "vue/multi-word-component-names": "off"
+  },
+  "overrides": [
+    {
+      "files": ["vite.config.js"],
+      "env": {
+        "node": true
+      }
+    }
+  ]
+}
